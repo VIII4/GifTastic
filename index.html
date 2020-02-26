@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Giftastic</title>
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="assets/css/reset.css" />
+
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Google Font -->
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/ccfabb4f25.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Javascript -->
+    <script src="assets/javascript/app.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="row p-1 border border-black rounded">
+        <div class="col"></div>
+        <div class="col-10 col-md-6 col-lg-4 ">
+          <h1 id="gameTitle" class="text-center ">
+            Gif-tastic
+          </h1>
+        </div>
+        <div class="col"></div>
+      </div>
+    </header>
+    <div class="container-fluid mt-0 p-1 bg-primary">
+      <!-- Bar with Buttons and Form to Add buttons -->
+      <div class="row row-cols-md-2 row-cols-1 px-2 bg-secondary">
+        <div class="col col-md-5 mx-auto">
+          <div class="form-row text-center my-2">
+            <div class="col-7">
+              <input
+                type="text"
+                class="form-control"
+                id="addSubject"
+                placeholder="New Gif Type"
+                name="add"
+              />
+            </div>
+            <div class="col col-md-3 ">
+              <button type="submit" class="btn btn-outline-dark btn-block ">
+                Add
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col col-md-7">
+          <div class="row">
+            <div id="buttonContainer" class="container-fluid my-2 ">
+              <p>Buttons</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Container with added gifs -->
+      <div class="row">
+        <div id="gifContainer" class="container-fluid gifwrapper bg-warning">
+          <p>Gifs</p>
+        </div>
+      </div>
+      <!-- Footer -->
+      <div class="row"></div>
+    </div>
+  </body>
+</html>
