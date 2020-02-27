@@ -48,8 +48,6 @@ function renderImages(images) {
         "' alt='Responsive image'/>"
     );
 
-    console.log(element);
-
     newDiv.append(newImg);
     gifContainer.append(newDiv);
   });
@@ -113,11 +111,10 @@ $(document).on("click", ".gifButton", function() {
   var queryUrl =
     "http://api.giphy.com/v1/gifs/search?q=" +
     topic +
-    "&api_key=viyOxGTzJVhG2IiX23Vn45oAFxwNEMv7&limit=20";
+    "&api_key=viyOxGTzJVhG2IiX23Vn45oAFxwNEMv7&limit=10";
 
   //Ajax request to API here
   $.ajax({ url: queryUrl, method: "GET" }).then(function(response) {
-    console.log(response);
     var images = [];
 
     response.data.forEach(element => {
@@ -129,7 +126,6 @@ $(document).on("click", ".gifButton", function() {
 
     renderImages(images);
 
-    console.log(images);
     //TO DO: create new div with Image tags and load
   });
 });
