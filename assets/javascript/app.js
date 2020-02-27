@@ -35,6 +35,38 @@ function addNewTopic() {
   }
 }
 
+function renderImages(images) {
+  images.forEach(element => {
+    var newDiv = $("<div class='col'>");
+    var newImg = $(
+      "<img data-state='still' data-active='" +
+        element.active +
+        "' data-still='" +
+        element.still +
+        "'class='gifImage' src='" +
+        element.still +
+        "' alt='Responsive image'/>"
+    );
+
+    console.log(element);
+
+    newDiv.append(newImg);
+    gifContainer.append(newDiv);
+  });
+}
+
+function switchState(element) {
+  var state = element.attr("data-state");
+
+  if (state === "still") {
+    element.attr("src", element.attr("data-active"));
+    element.attr("data-state", "active");
+  } else {
+    element.attr("src", element.attr("data-still"));
+    element.attr("data-state", "still");
+  }
+}
+
 function whatthe() {
   alert("WhatTHE");
 }
@@ -73,8 +105,35 @@ $("document").ready(function() {
 
 //When Gif Topics are pressed
 $(document).on("click", ".gifButton", function() {
+  //TO DO: Clear gif container before loading new GIfs
+  gifContainer.empty();
+
+  //TO DO: Get DATA from giphy API
   var topic = $(this).attr("data-value");
-  alert(topic + " Gif BUtton Clicked");
+  var queryUrl =
+    "http://api.giphy.com/v1/gifs/search?q=" +
+    topic +
+    "&api_key=viyOxGTzJVhG2IiX23Vn45oAFxwNEMv7&limit=20";
 
   //Ajax request to API here
+  $.ajax({ url: queryUrl, method: "GET" }).then(function(response) {
+    console.log(response);
+    var images = [];
+
+    response.data.forEach(element => {
+      var tempa = element.images.fixed_height_still.url;
+      var tempb = element.images.fixed_height.url;
+      var image = { still: tempa, active: tempb };
+      images.push(image);
+    });
+
+    renderImages(images);
+
+    console.log(images);
+    //TO DO: create new div with Image tags and load
+  });
+});
+
+$(document).on("click", ".gifImage", function() {
+  switchState($(this));
 });
