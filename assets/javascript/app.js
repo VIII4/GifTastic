@@ -10,6 +10,7 @@ var gifContainer;
 //Global Variables
 
 var addedTopics = ["pig", "cow", "rooster", "hen"];
+var requestAmount = "12";
 
 //Functions
 var getElements = function() {
@@ -37,7 +38,7 @@ function addNewTopic() {
 
 function renderImages(images) {
   images.forEach(element => {
-    var newDiv = $("<div class='col'>");
+    var newDiv = $("<div class='col-12 col-md-3 py-2'>");
     var newImg = $(
       "<img data-state='still' data-active='" +
         element.active +
@@ -111,7 +112,8 @@ $(document).on("click", ".gifButton", function() {
   var queryUrl =
     "https://api.giphy.com/v1/gifs/search?q=" +
     topic +
-    "&api_key=viyOxGTzJVhG2IiX23Vn45oAFxwNEMv7&limit=10";
+    "&api_key=viyOxGTzJVhG2IiX23Vn45oAFxwNEMv7&limit=" +
+    requestAmount;
 
   //Ajax request to API here
   $.ajax({ url: queryUrl, method: "GET" }).then(function(response) {
