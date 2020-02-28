@@ -109,7 +109,7 @@ $(document).on("click", ".gifButton", function() {
   //TO DO: Get DATA from giphy API
   var topic = $(this).attr("data-value");
   var queryUrl =
-    "http://api.giphy.com/v1/gifs/search?q=" +
+    "https://api.giphy.com/v1/gifs/search?q=" +
     topic +
     "&api_key=viyOxGTzJVhG2IiX23Vn45oAFxwNEMv7&limit=10";
 
