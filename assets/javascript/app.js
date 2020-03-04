@@ -9,7 +9,13 @@ var gifContainer;
 
 //Global Variables
 
-var addedTopics = ["pig", "cow", "rooster", "hen"];
+var addedTopics = [
+  "dougie",
+  "schmurda dance",
+  "milly rock",
+  "twerk",
+  "nae nae"
+];
 var requestAmount = "12";
 
 //Functions
@@ -79,7 +85,7 @@ function createButtons() {
 
     var newButton = $("<button type='button'>");
 
-    newButton.addClass("gifButton btn btn-outline-dark btn-sm btn-block");
+    newButton.addClass("gifButton btn btn-dark btn-sm btn-block");
     newButton.attr("data-value", addedTopics[i]);
     newButton.text(addedTopics[i]);
 

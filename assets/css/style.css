@@ -2,3 +2,39 @@
   width: 100%;
   height: auto;
 }
+
+body {
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+  /*IF YOU REALLY WANT TO FORCE THE ISSUE*/
+}
+.All subsequent child {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.funk {
+  font-family: "dance_floorregular";
+  font-size: 40px;
+  color: rgb(255, 255, 255);
+}
+
+.title-bar {
+  background-color: rgba(0, 0, 0, 0.452);
+  border: rgb(138, 241, 255);
+}
+
+.bg {
+  background-image: url(../images/person-using-dj-controller-near-spotlights-3531869.jpg);
+  height: 100%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
